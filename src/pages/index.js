@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ComponentName from "./query"
+import ComponentName from "../components/query"
 
 const IndexPage = ({ data }) => {
   return (
