@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
@@ -25,6 +25,7 @@ const IndexPage = ({ data }) => {
         <Link to="/page-2/">Go to page 2</Link> <br />
         <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
       </p>
+      <pre>{JSON.stringify(data, null, 4)}</pre>
       <ComponentName />
     </Layout>
   )

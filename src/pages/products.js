@@ -7,7 +7,6 @@ const Products = ({
     allContentfulProduct: { nodes },
   },
 }) => {
-  console.log(nodes)
   return (
     <Layout>
       <div
@@ -22,7 +21,7 @@ const Products = ({
             key={product.id}
             style={{ width: 250, margin: 20, border: "1px solid lightgray" }}
           >
-            <Link>
+            <Link to={`/product/${product.slug}`}>
               <img src={product.image.fluid.src} alt={product.title} />
             </Link>
             <div style={{ paddingLeft: 10 }}>
