@@ -1,7 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import { node } from "prop-types"
 
 const Products = ({
   data: {
@@ -16,15 +15,16 @@ const Products = ({
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-between",
-          backgroundColor: "blue",
         }}
       >
         {nodes.map(product => (
           <div
             key={product.id}
-            style={{ width: 250, margin: 20, backgroundColor: "red" }}
+            style={{ width: 250, margin: 20, border: "1px solid lightgray" }}
           >
-            <img src={product.image.fluid.src} alt={product.title} />
+            <Link>
+              <img src={product.image.fluid.src} alt={product.title} />
+            </Link>
             <div style={{ paddingLeft: 10 }}>
               <h2>{product.title}</h2>
               <h4>{product.price}</h4>
