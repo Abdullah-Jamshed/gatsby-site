@@ -1,12 +1,19 @@
-import React from 'react';
+import React from "react"
+import { graphql } from "gatsby"
 
-const productTemplate = ({pageContext}) => {
-    console.log(pageContext)
-    return (
-        <div>
-            
-        </div>
-    );
+const ProductTemplate = ({data:{contentfulProduct}}) => {
+  console.log(contentfulProduct)
+  return <div>template page</div>
 }
 
-export default productTemplate;
+export const query = graphql`
+  query ProductDetail($slug: String) {
+    contentfulProduct(slug: { eq: $slug }) {
+      title
+      price
+      id
+    }
+  }
+`
+
+export default ProductTemplate

@@ -8,17 +8,6 @@ exports.createPages = async ({ graphql, actions }) => {
       allContentfulProduct {
         nodes {
           slug
-          price
-          id
-          description {
-            description
-          }
-          title
-          image {
-            fluid {
-              src
-            }
-          }
         }
       }
     }
