@@ -13,20 +13,40 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `1rem 1.0875rem`,
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <div>
+        <h3
+          style={{
+            margin: 0,
+          }}
+        >
+          <Link
+            to="/"
+            style={{
+              color: `white`,
+              textDecoration: `none`,
+            }}
+          >
+            {siteTitle}
+          </Link>
+        </h3>
+      </div>
+      <div>
         <Link
-          to="/"
           style={{
             color: `white`,
             textDecoration: `none`,
           }}
+          to="/products"
         >
-          {siteTitle}
+          Products
         </Link>
-      </h1>
+      </div>
     </div>
   </header>
 )
