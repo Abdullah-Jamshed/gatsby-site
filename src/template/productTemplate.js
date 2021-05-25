@@ -6,8 +6,6 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const ProductTemplate = ({ data: { contentfulProduct } }) => {
-  console.log(contentfulProduct.headingsForPage.raw)
-
   const options = {
     renderNode: {
       [BLOCKS.HEADING_1]: (node, childern) => (
@@ -20,19 +18,20 @@ const ProductTemplate = ({ data: { contentfulProduct } }) => {
     <div>
       template page
       <div>
-        <p>{contentfulProduct.headingsForPage.raw}</p>
+        {/* <p>{contentfulProduct.headingsForPage.raw}</p> */}
 
         <p>Render Rich Text with : gatsby-source-contentful/rich-text</p>
 
-        {contentfulProduct &&
+        {contentfulProduct.headingsForPage &&
           renderRichText(contentfulProduct.headingsForPage, options)}
 
         <p>Render Rich Text with : @contentful/rich-text-react-renderer</p>
 
-        {documentToReactComponents(
-          JSON.parse(contentfulProduct.headingsForPage.raw),
-          options
-        )}
+        {contentfulProduct.headingsForPage &&
+          documentToReactComponents(
+            JSON.parse(contentfulProduct.headingsForPage.raw),
+            options
+          )}
       </div>
     </div>
   )

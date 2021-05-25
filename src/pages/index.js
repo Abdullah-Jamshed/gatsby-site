@@ -11,6 +11,8 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
 
+      <h1>Hello From Gatsby-Site</h1>
+
       <StaticImage
         src="../images/gatsby-astronaut.png"
         width={300}

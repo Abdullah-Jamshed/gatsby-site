@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => (
   >
     <div
       style={{
-        margin: `0 auto`,
+        margin: `0px auto`,
         maxWidth: 960,
         padding: `1rem 1.0875rem`,
         display: "flex",
@@ -20,11 +20,7 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <div>
-        <h3
-          style={{
-            margin: 0,
-          }}
-        >
+        <h3 style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
@@ -37,15 +33,28 @@ const Header = ({ siteTitle }) => (
         </h3>
       </div>
       <div>
-        <Link
+        <ul
           style={{
-            color: `white`,
-            textDecoration: `none`,
+            display: "flex",
+            justifyContent: "space-between",
+            listStyleType: "none",
+            margin: 0,
           }}
-          to="/products"
         >
-          Products
-        </Link>
+          <li style={{ margin: "0 10px 0 0" }}>
+            <Link style={{ color: `white`, textDecoration: `none` }} to="/">
+              <h2 style={{ display: "inline", fontSize: 15 }}>Home</h2>
+            </Link>
+          </li>
+          <li style={{ margin: 0 }}>
+            <Link
+              style={{ color: `white`, textDecoration: `none` }}
+              to="/products"
+            >
+              <h2 style={{ display: "inline", fontSize: 15 }}>Products</h2>
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   </header>
